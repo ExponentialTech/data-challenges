@@ -14,9 +14,11 @@ Your task is to use the PostgreSQL schema and tables contained in [data.dmp](/qu
 Your submission should include a new `esg_analysis.dmp` file with the database code to replicate your solution as well as a `query.sql` file containing the SQL query used to produce the `sp500_esg_scores` table.
 
 ### 2. Carbon Analytic Calculation
-Utilizing the provided [Jupyter Notebook](/carbon_calculation/carbon_analytic_calculation.ipynb?raw=true) (and additional libraries/files/tools as needed) implement a function that can be utilized to calculate the (strawman) Adjusted CO2 Total emissions for a company. The calculation is laid out below. The data is stored inside of the [included data file](/carbon_calculation/data.json?raw=true). 
+Use Python to implement a function that can be utilized to calculate the (strawman) Adjusted CO2 Total emissions for a company. The calculation is laid out below. mu_purch, mu_max_purch, and phi_prod could be adjusted for a given run meaning that they would be the same for each company, but can be edited in between runs.
 
-Your code structure can take whatever you believe to be best (individual function, class, module, etc.). Please implement the code as well as write tests with pytest or unittest for the calculation, showcasing how you would write tests for such requirements. Provide instructions with your submission for how to call your implemented function as well as how to run the tests.
+The data is stored inside of the [included data file](/carbon_calculation/data.json?raw=true). 
+
+Your code structure can take whatever you believe to be best (individual function, class, module, etc.). You can do it in a Jupyter notebook or directly in a .py file. Please implement the code as well as write tests with pytest or unittest for the calculation, showcasing how you would write tests for such requirements. Provide instructions with your submission for how to call your implemented function as well as how to run the tests.
 
 ![Calculation](/carbon_calculation/calculation.png?raw=true "Calculation")
 
