@@ -25,7 +25,7 @@ Your code structure can take whatever you believe to be best (individual functio
 * Suggest how to orchestrate updating the data and then computing this. Assume the data is saved in a PostgreSQL database.
 
 ### 3. Data QA
-You are given a TestPortfolio, which has 6 holdings, 5 are company instruments and 1 is a Test Fund. Complete data QA in the [spreadsheet](/data_qa/TestPortfolio_5entities1fund.xlsx) by checking the computations and filling in the cells highlighted in yellow. Those are the fields that will be displayed in the web app.
+You are given a TestPortfolio which has 6 holdings; 5 are company instruments and 1 is a Test Fund. Complete data QA in the [spreadsheet](/data_qa/TestPortfolio_5entities1fund.xlsx) by checking the computations and filling in the cells highlighted in yellow. Those are the fields that will be displayed in the web app.
 
 The first sheet `portfolio holdings` has the Asset Class, holding_amount, and Name of the holdings. The second sheet `Test Fund Infos` contains the carbon and financial information of the constituents of the Test Fund, which is one of the holdings. The last file `carbon` has the carbon information of the holdings of the rest of the portfolio and can be filled in to determine the overall carbon intensity and the "owned" carbon for the portfolio.
 
