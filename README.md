@@ -24,6 +24,39 @@ Your code structure can take whatever you believe to be best (individual functio
 
 * Suggest how to orchestrate updating the data and then computing this. Assume the data is saved in a PostgreSQL database.
 
+### 3. Data QA
+You are given a TestPortfolio, which has 6 holdings, 5 are company instruments and 1 is a Test Fund. Complete data QA in the [spreadsheet](/data_qa/TestPortfolio_5entities1fund.xlsx) by checking the computations and filling in the cells highlighted in yellow. Those are the fields that will be displayed in the web app.
+
+The first sheet `portfolio holdings` has the Asset Class, holding_amount, and Name of the holdings. The second sheet `Test Fund Infos` contains the carbon and financial information of the constituents of the Test Fund, which is one of the holdings. The last file `carbon` has the carbon information of the holdings of the rest of the portfolio and can be filled in to determine the overall carbon intensity and the "owned" carbon for the portfolio.
+
+Computation definitions:
+
+carbon
+```
+ownership_weight = holding_amount/enterprise_value (the % of the company "owned" in the portfolio)
+portfolio_weight = holding_amount/total_portfolio_amount
+total_intensity (for a company) = co2_scope_1_intensity+co2_scope_1_intensity+co2_scope_1_intensity
+total_intensity (for a fund) = Fund intensity (defined below)
+owned_carbon (for a company)= total_emitted*ownership_weight
+owned_carbon (for a fund) = carbon owned by the fund position (you compute)
+
+Portfolio total_intensity = sum(portfolio_weight*total_intensity for each company)
+
+Portfolio owned_carbon = sum(owned_carbon)
+```
+
+Test Fund infos
+```
+fund_weight = weight of the holding in the fund
+total_intensity = co2_scope_1_intensity+co2_scope_1_intensity+co2_scope_1_intensity
+owned_carbon = carbon owned by the holding position in the fund (you compute)
+
+Fund intensity = sum(fund_weight*total_intensity for each company)
+Fund owned_carbon = sum(owned_carbon)
+```
+
+Check the computations and fill in the rest. What would make the test easier? What are some other cases that may be useful to test?
+
 ## Submission
 When you are ready to submit your solution, please follow these instructions:
 * Please do not fork this repo to your own GitHub account!
